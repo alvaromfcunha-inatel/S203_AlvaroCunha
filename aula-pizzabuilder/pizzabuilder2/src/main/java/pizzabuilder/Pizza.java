@@ -1,3 +1,5 @@
+package pizzabuilder;
+
 public class Pizza {
     private Integer size = 0;
     private Boolean hasCheese = false;

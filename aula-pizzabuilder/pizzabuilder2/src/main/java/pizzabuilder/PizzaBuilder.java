@@ -1,3 +1,5 @@
+package pizzabuilder;
+
 public class PizzaBuilder {
     private Pizza pizza;
 
@@ -5,7 +7,7 @@ public class PizzaBuilder {
         this.pizza = new Pizza();
     }
 
-    public PizzaBuilder size(Integer size) {
+    public PizzaBuilder setSize(Integer size) {
         this.pizza.setSize(size);
         return this;
     }
@@ -21,20 +23,21 @@ public class PizzaBuilder {
     }
 
     private void validateSize() {
-        if(!(this.size >= 1 && this.size <= 3)) {
-            throw new IllegalStateException('Invalid size.')
+        Integer size = this.pizza.getSize();
+        if(!(size >= 1 && size <= 3)) {
+            throw new IllegalStateException("Invalid size.");
         }
     }
 
-    private void validateIngredent() {
-        if(!(this.hasCheese || this.hasPepperoni)) {
-            throw new IllegalStateException('At least one ingredient (Cheese or Pepperoni).')
+    private void validateIngredient() {
+        if(!(this.pizza.getHasCheese() || this.pizza.getHasPepperoni())) {
+            throw new IllegalStateException("At least one ingredient (Cheese or Pepperoni).");
         }
     }
 
     public Pizza getPizza() {
         validateSize();
-        validateIngredent();
+        validateIngredient();
         return this.pizza;
     }
 }
