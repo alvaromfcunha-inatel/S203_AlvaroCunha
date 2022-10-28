@@ -3,6 +3,7 @@ package state.artigo;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ArtigoRefactorTest {
 
@@ -11,16 +12,16 @@ public class ArtigoRefactorTest {
         GerenteSeguranca gs = GerenteSeguranca.getInstance();
         ArtigoRefactor artigo = new ArtigoRefactor();
 
-        assertEquals("RASCUNHO", artigo.getState().toString());
+        assertTrue(artigo.getState() instanceof RascunhoState);
 
         gs.setUser("AUTOR");
         artigo.publicar();
 
-        assertEquals("REVISANDO", artigo.getState().toString());
+        assertTrue(artigo.getState() instanceof RevisandoState);
 
         gs.setUser("MODERADOR");
         artigo.publicar();
 
-        assertEquals("APROVADO", artigo.getState().toString());
+        assertTrue(artigo.getState() instanceof AprovadoState);
     }
 }

@@ -26,9 +26,4 @@ public class RevisandoState implements State {
             throw new RuntimeException("not allowed");
         }
     }
-
-    @Override
-    public String toString() {
-        return "REVISANDO";
-    }
 }

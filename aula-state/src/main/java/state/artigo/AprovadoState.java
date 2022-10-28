@@ -16,9 +16,4 @@ public class AprovadoState implements State {
     public void reprovar() {
         return;
     }
-
-    @Override
-    public String toString() {
-        return "APROVADO";
-    }
 }
