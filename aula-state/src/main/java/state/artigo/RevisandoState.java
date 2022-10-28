@@ -11,7 +11,7 @@ public class RevisandoState implements State {
     public void publicar() {
         GerenteSeguranca gs = GerenteSeguranca.getInstance();
         if(gs.isUserModerador()) {
-            artigo.setState(new PublicadoState(artigo));
+            artigo.setState(new AprovadoState(artigo));
         } else {
             throw new RuntimeException("not allowed");
         }

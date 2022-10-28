@@ -23,7 +23,7 @@ public class Artigo {
             }
         } else if("REVISANDO".equals(this.state)) {
             if(gs.isUserModerador()) {
-                this.state = "PUBLICADO";
+                this.state = "APROVADO";
                 this.logHistory.add("[State][publicar()][" + LocalDateTime.now() + "] REVISANDO => PUBLICADO");
             } else {
                 throw new RuntimeException("user does not have access to this method");

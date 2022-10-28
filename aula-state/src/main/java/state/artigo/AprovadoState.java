@@ -1,9 +1,9 @@
 package state.artigo;
 
-public class PublicadoState implements State {
+public class AprovadoState implements State {
     private ArtigoRefactor artigo;
 
-    public PublicadoState(ArtigoRefactor artigo) {
+    public AprovadoState(ArtigoRefactor artigo) {
         this.artigo = artigo;
     }
 
@@ -19,6 +19,6 @@ public class PublicadoState implements State {
 
     @Override
     public String toString() {
-        return "PUBLICADO";
+        return "APROVADO";
     }
 }
