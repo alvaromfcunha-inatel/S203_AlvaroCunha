@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Lista:</h1>
+    <table>
+        <tr>
+            <td>Descricao</td>
+            <td>Valor</td>
+        </tr>
+        <tr th:each="pvar:${productList}">
+            <td th:text="${pvar.description}"></td>
+            <td th:text="${pvar.price}"></td>
+        </tr>
+    </table>
+</body>
+</html>
